@@ -6,7 +6,7 @@
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/21 19:25:20 by mutalay           #+#    #+#             */
-/*   Updated: 2026/08/29 20:25:19 by mutalay          ###   ########.fr       */
+/*   Updated: 2026/08/30 13:20:22 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	ft_putchar(int *counter, char c)
 {
 	write(1, &c, 1);
-	*counter++;
+	(*counter)++;
 }

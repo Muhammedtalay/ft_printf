@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putunbrhex.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/22 15:14:32 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/01 17:11:35 by mutalay          ###   ########.fr       */
+/*   Created: 2026/08/22 15:23:21 by mutalay           #+#    #+#             */
+/*   Updated: 2026/09/01 17:28:35 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(int *counter, char *s)
+void	ft_putunbrhex(int *counter, unsigned long number)
 {
-	size_t	i;
+	char	*str;
 
-	i = 0;
-	if (!s)
+	str = "0123456789abcdef";
+	if (number >= 16)
 	{
-		s = "(null)";
+		ft_putunbrhex(counter, number / 16);
 	}
-	while (s[i])
-	{
-		ft_putchar(counter, s[i]);
-		i++;
-	}
+	ft_putchar(counter, str[(number % 16)]);
 }

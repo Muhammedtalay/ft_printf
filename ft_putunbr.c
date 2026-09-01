@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putunbr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mutalay <mutalay@student.42istanbul.com.tr +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/22 15:14:32 by mutalay           #+#    #+#             */
-/*   Updated: 2026/09/01 17:11:35 by mutalay          ###   ########.fr       */
+/*   Created: 2026/08/22 15:23:21 by mutalay           #+#    #+#             */
+/*   Updated: 2026/08/30 18:41:36 by mutalay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(int *counter, char *s)
+void	ft_putunbr(int *counter, unsigned int number)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
+	if (number >= 10)
 	{
-		s = "(null)";
+		ft_putunbr(counter, number / 10);
 	}
-	while (s[i])
-	{
-		ft_putchar(counter, s[i]);
-		i++;
-	}
+	ft_putchar(counter, (number % 10) + '0');
 }
